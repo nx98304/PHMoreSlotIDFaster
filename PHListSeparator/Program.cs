@@ -201,10 +201,12 @@ namespace PHListSeparator
                             writer.WriteLine(ta.m_Script);
                             writer.Close();
                         }
+                        unityParser.Cabinet.UnloadSubfile(ta);
                         break;
                 }
                 if (found) break;
             }
+            unityParser.Dispose();
             if (!found)
             {
                 Console.WriteLine("list TextAsset not found, ignored: " + bundle_name);
